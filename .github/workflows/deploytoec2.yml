@@ -1,6 +1,8 @@
 # name: deploy to ec2
 # on:
-#     push
+#     push:
+#       branches:
+#         - master
 # jobs:
 
 #     deploy:
