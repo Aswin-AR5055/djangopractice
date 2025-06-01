@@ -13,8 +13,31 @@
 #             - name: checkout code
 #               uses: actions/checkout@v3
 
-#             - name: Terraform Script
+#             - name: Terraform setup
 #               uses: hashicorp/setup-terraform@v3
 #               with:
 #                 terraform_version: 1.6.3
+
+#             - name: aws credentials
+#               uses: aws-actions/configure-aws-credentials@v3
+#               with:
+#                 aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#                 aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+#                 aws-region: ${{ secrets.AWS_REGION }}
+
+#             - name: Terraform init
+#               run: terraform init
+#               working-directory: awsinfra
+            
+#             - name: Terraform plan
+#               run: terraform plan
+#               working-directory: awsinfra
+
+#             - name: Terraform apply
+#               run: terraform apply -auto-approve
+#               working-directory: awsinfra
+
+
+            
+
 
